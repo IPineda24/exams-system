@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body >
+    <div class="container">
+    <h2>Documentación</h2>
+        <section>
+            <h2>¿Qué son los condicionales?</h2>
+            <p>Los condicionales en Python permiten ejecutar diferentes bloques de código dependiendo de si una condición es verdadera (<code>True</code>) o falsa (<code>False</code>).</p>
+        </section>
+
+        <section>
+            <h2>Ejemplo básico</h2>
+            <div class="example">
+                <p>El condicional más simple usa <code>if</code>:</p>
+                <pre><code class="language-python">x = 10
+if x > 5:
+    print("x es mayor que 5")</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Condicional <code>if-else</code></h2>
+            <div class="example">
+                <p>Usa <code>if</code> para una condición y <code>else</code> para manejar lo contrario:</p>
+                <pre><code class="language-python">x = 3
+if x > 5:
+    print("x es mayor que 5")
+else:
+    print("x no es mayor que 5")</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Condicional <code>if-elif-else</code></h2>
+            <div class="example">
+                <p>Para múltiples condiciones, usa <code>elif</code>:</p>
+                <pre><code class="language-python">x = 8
+if x > 10:
+    print("x es mayor que 10")
+elif x > 5:
+    print("x está entre 6 y 10")
+else:
+    print("x es 5 o menor")</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Usando operadores lógicos</h2>
+            <div class="example">
+                <p>Combina condiciones con <code>and</code>, <code>or</code> y <code>not</code>:</p>
+                <pre><code class="language-python">x = 7
+if x > 5 and x < 10:
+    print("x está entre 6 y 9")
+
+if x < 5 or x > 10:
+    print("x no está entre 5 y 10")
+
+if not (x == 8):
+    print("x no es igual a 8")</code></pre>
+            </div>
+        </section>
+        </div>
+</body>
+</html>

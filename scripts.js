@@ -21,12 +21,20 @@ function checkCredentials() {
     }
 }
 
+// Función para convertir segundos a formato HH:MM:SS
+function formatTime(seconds) {
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
+    return `${hrs}:${mins}:${secs}`;
+}
+
 // Función para iniciar el temporizador
 function startTimer() {
     const timer = setInterval(() => {
         if (timeLeft > 0) {
             timeLeft--;
-            timeElement.textContent = timeLeft;
+            timeElement.textContent = formatTime(timeLeft);
         } else {
             clearInterval(timer);
             alert("El tiempo ha terminado");
@@ -60,27 +68,33 @@ function submitExam() {
     // Obtener el nombre, código del textarea
     const name = document.getElementById('nameInput').value.trim();
     const code = document.getElementById('code').value.trim();
-    const formattedCode = code.replace(/\t/g, '    '); // Reemplaza tabulaciones con espacios
 
-    // Contenido del PDF
-    const content = [
-        `Nombre del Estudiante: ${name}`,
-        `Número de veces que se abandonó el sitio: ${warningCount}`,
-        `Código ingresado:`,
-        formattedCode,
-    ].join('\n');
+    // Formatear el código para el PDF
+    const formattedCode = code
+        .replace(/\t/g, '    ') // Reemplaza tabulaciones con espacios
+        .split('\n') // Divide en líneas
+        .map((line, idx) => `${idx + 1}: ${line}`) // Añade números de línea
+        .join('\n');
 
-    // Añadir contenido al PDF
-    doc.text('Resultados del Examen', 10, 10);
-    doc.autoTable({
-        startY: 20,
-        body: [{ code: content }],
-        columns: [{ header: '', dataKey: 'code' }],
-        styles: { fontSize: 10, cellPadding: 2, overflow: 'linebreak' },
-        theme: 'plain',
-        showHead: 'false',
-        margin: { top: 20, bottom: 20, left: 10, right: 10 }
-    });
+    // Configurar el PDF con estilo amigable
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.text('Resultados del Examen', 10, 15);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(12);
+    doc.text(`Nombre del Estudiante: ${name}`, 10, 25);
+    doc.text(`Número de advertencias: ${warningCount}`, 10, 35);
+
+    doc.setFont('courier', 'normal'); // Fuente monoespaciada para código
+    doc.setFontSize(10);
+    doc.text('Código ingresado:', 10, 45);
+
+    // Añadir código con resaltado de sintaxis
+    doc.setDrawColor(200, 200, 200); // Color gris para bordes
+    doc.rect(10, 50, 190, 200); // Contenedor del código
+    doc.setTextColor(50, 50, 50); // Texto en gris oscuro
+    doc.text(formattedCode, 12, 55, { maxWidth: 186 });
 
     // Guardar el PDF
     doc.save('examen_resultado.pdf');
@@ -95,4 +109,3 @@ function refreshIframe() {
     const iframe = document.getElementById('myIframe');
     iframe.src = iframe.src; // Esto recarga el iframe
 }
-

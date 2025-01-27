@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conditional Actions</h1>
+
+        <h2>Task</h2>
+        <p>Given an integer, <code>n</code>, perform the following conditional actions:</p>
+
+        <ul>
+            <li>If <code>n</code> is odd, print <strong>Weird</strong>.</li>
+            <li>If <code>n</code> is even and in the inclusive range of 2 to 5, print <strong>Not Weird</strong>.</li>
+            <li>If <code>n</code> is even and in the inclusive range of 6 to 20, print <strong>Weird</strong>.</li>
+            <li>If <code>n</code> is even and greater than 20, print <strong>Not Weird</strong>.</li>
+        </ul>
+
+        <h2>Input Format</h2>
+        <p>A single line containing a positive integer, <code>n</code>.</p>
+
+        <h2>Constraints</h2>
+        <p>The value of <code>n</code> is guaranteed to be a positive integer.</p>
+
+        <h2>Output Format</h2>
+        <p>Print <strong>Weird</strong> if the number is weird. Otherwise, print <strong>Not Weird</strong>.</p>
+
+        <h2>Sample Inputs and Outputs</h2>
+
+        <h3>Sample Input 0</h3>
+        <pre>3</pre>
+        <h3>Sample Output 0</h3>
+        <pre>Weird</pre>
+        <p>Explanation: <code>n</code> is odd and odd numbers are weird, so print <strong>Weird</strong>.</p>
+
+        <h3>Sample Input 1</h3>
+        <pre>24</pre>
+        <h3>Sample Output 1</h3>
+        <pre>Not Weird</pre>
+        <p>Explanation: <code>n</code> is even and greater than 20, so it is not weird.</p>
+
+        <h3>Test data list</h3>
+        <ul>
+            <li> 24 -->  Not Weird</li>
+            <li> 4 -->   Not Weird</li>
+            <li> 18 -->  Weird</li>
+            <li> 29 -->  Weird</li>
+            <li> 5 -->   Weird</li>
+            <li> 100 --> Not Weird</li>
+            <li> 20 -->  Weird</li>
+        </ul>
+    </div>
+</body>
+</html>

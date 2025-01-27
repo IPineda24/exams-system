@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
-    background-color: #121212;
+    background-color:rgb(27, 27, 27);
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -18,6 +18,15 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#pinContainer{
+max-width: 800px;
+color: black;
+margin: 20px auto;
+padding: 20px;
+background: white;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 h1, h2 {
     color: #ffcc00;
     margin-top: 0;
@@ -25,7 +34,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 52px;
 }
 
 h2 {
@@ -62,6 +71,10 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: 500;
     font-size: 16px;
+}
+label{
+font-size: 30px !important;
+color: yellow;  
 }
 
 #timer{
@@ -126,3 +139,58 @@ ul, ol {
 ul li, ol li {
     margin-bottom: 10px;
 }
+
+        .container {
+            max-width: 800px;
+            color: black;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
