@@ -2,7 +2,7 @@ let timeLeft = 7200; // Tiempo de examen en segundos
 let penalty = 10; // Puntos a restar por cambiar de pestaña
 let points = 100; // Puntos totales del examen
 let warningCount = 0; // Contador de advertencias
-const correctPin = '6623'; // PIN correcto
+const correctPin = '1406'; // PIN correcto
 
 const timeElement = document.getElementById('time');
 const warningElement = document.getElementById('warning');
